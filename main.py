@@ -616,7 +616,8 @@ def main():
         
         province_name = data.iloc[0]['ProvinceName']
         st.text("Đang load map") 
-        G = ox.graph_from_place(f'{province_name}, VietNam', network_type='bike')
+        # G = ox.graph_from_place(f'{province_name}, VietNam', network_type='bike')
+        G = ox.graph_from_place(f'{province_name}, VietNam', network_type='drive')
         st.text("Loaded Map Done")
         
         data['Longitude'] = data['Longitude'].astype(float)
