@@ -614,18 +614,18 @@ def main():
         
         st.header("2. Result")
         
-        # province_name = data.iloc[0]['ProvinceName']
+        province_name = data.iloc[0]['ProvinceName']
         # st.text("Đang load map") 
         # # G = ox.graph_from_place(f'{province_name}, VietNam', network_type='bike')
         # G = ox.graph_from_place(f'{province_name}, VietNam', network_type='drive')
         # st.text("Loaded Map Done")
 
         # Thiết lập địa điểm và network_type
-        location = "Thủ Đức VietNam"
+        # location = "Thủ Đức VietNam"
         network_type = 'drive'
 
         # Sử dụng osmnx để tải dữ liệu đồng thời xây dựng biểu đồ đường đi
-        G = ox.graph_from_place(location, network_type=network_type)
+        G = ox.graph_from_place(f'{province_name}, VietNam', network_type=network_type)
 
         data['Longitude'] = data['Longitude'].astype(float)
         data['Latitude'] = data['Latitude'].astype(float)
