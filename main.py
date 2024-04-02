@@ -506,7 +506,7 @@ def main():
             sovongchay = all_data['SRD'].value_counts().index[-1] + 1
             # st.text(sovongchay)     
             # st.dataframe(all_data)   
-            folium_static(new_map)
+            # folium_static(new_map)
             
             visited_points_list = []
             
