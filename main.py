@@ -544,7 +544,7 @@ def main():
             
             print('Tao Group Cho Map')
             # In ra kết quả
-            st.dataframe(thu_danhsach.head(10))
+            st.dataframe(thu_danhsach)
             # folium_static(new_map, width=1000, height=800)
             folium_static(new_map)
 
