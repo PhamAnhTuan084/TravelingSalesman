@@ -463,11 +463,11 @@ def main():
     # Kiểm tra số lượng file đã tải lên
     uploaded_files = st.file_uploader("Upload Excel file", type=["xlsx"], accept_multiple_files=True)
 
-    # Hiển thị thông tin về file đã upload
-    if uploaded_files:
-        st.write("Uploaded files:")
-        for uploaded_file in uploaded_files:
-            st.write(uploaded_file.name)
+    # # Hiển thị thông tin về file đã upload
+    # if uploaded_files:
+    #     st.write("Uploaded files:")
+    #     for uploaded_file in uploaded_files:
+    #         st.write(uploaded_file.name)
     
     dataframes = {}
     data = None
@@ -544,7 +544,7 @@ def main():
             
             print('Tao Group Cho Map')
             # In ra kết quả
-            st.dataframe(thu_danhsach)
+            st.dataframe(thu_danhsach.head(10))
             # folium_static(new_map, width=1000, height=800)
             folium_static(new_map)
 
@@ -555,8 +555,7 @@ def main():
             st.markdown(href, unsafe_allow_html=True)    
 
             print('Da chay xong')
-            st.markdown("<h3 style='text-align: center; font-size: 30px;'>FINISH</h1>", unsafe_allow_html=True)
-            # st.header("FINISH")
+            st.markdown("<h3 style='text-align: center; font-size: 25px;'>FINISH</h1>", unsafe_allow_html=True)
                     
 if __name__ == '__main__':
     main()        
