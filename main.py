@@ -555,7 +555,18 @@ def main():
             st.markdown(href, unsafe_allow_html=True)    
 
             print('Da chay xong')
-            st.markdown("<h3 style='text-align: center; font-size: 30px;'>FINISH</h1>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; font-size: 30px;'>FINISH</h1>", unsafe_allow_html=True)z
+            
+            import psutil
+            import os
+            # Lấy thông tin quy trình hiện tại
+            process = psutil.Process(os.getpid())
+
+            # In ra tổng lượng memory đã sử dụng (bằng megabyte)
+            print("Tổng lượng memory đã sử dụng:", process.memory_info().rss / 1024 ** 2, "MB")
+
+            # In ra lượng memory đang sử dụng (bằng megabyte)
+            print("Lượng memory đang sử dụng:", process.memory_info().vms / 1024 ** 2, "MB")            
                     
 if __name__ == '__main__':
     main()        
