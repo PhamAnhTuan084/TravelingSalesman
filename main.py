@@ -555,7 +555,7 @@ def main():
             st.markdown(href, unsafe_allow_html=True)    
 
             print('Da chay xong')
-            st.markdown("<h3 style='text-align: center; font-size: 30px;'>FINISH</h1>", unsafe_allow_html=True)z
+            st.markdown("<h3 style='text-align: center; font-size: 30px;'>FINISH</h1>", unsafe_allow_html=True)
             
             import psutil
             import os
