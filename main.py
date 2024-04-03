@@ -463,11 +463,11 @@ def main():
     # Kiểm tra số lượng file đã tải lên
     uploaded_files = st.file_uploader("Upload Excel file", type=["xlsx"], accept_multiple_files=True)
 
-    # # Hiển thị thông tin về file đã upload
-    # if uploaded_files:
-    #     st.write("Uploaded files:")
-    #     for uploaded_file in uploaded_files:
-    #         st.write(uploaded_file.name)
+    # Hiển thị thông tin về file đã upload
+    if uploaded_files:
+        st.write("Uploaded files:")
+        for uploaded_file in uploaded_files:
+            st.write(uploaded_file.name)
     
     dataframes = {}
     data = None
@@ -510,27 +510,21 @@ def main():
             
             visited_points_list = []
             
-            try:
-                for i in range(1, sovongchay):
-                    print('Dang la lan thu ' + str(i))
-                    # Filter data for the current group (i)
-                    group_df = all_data[all_data['SRD'] == i]
+            for i in range(1, sovongchay):
+                print('Dang la lan thu ' + str(i))
+                # Filter data for the current group (i)
+                group_df = all_data[all_data['SRD'] == i]
 
-                    colors = ['black', 'lightblue', 'gray', 'blue', 'lightgreen', 'purple', 'red', 'green', 'white', 'darkblue', 'orange', 'pink', 'yellow']
-                    random_color = random.choice(colors)
-                    
-                    # Create visited_points, new_map, and layer_control for the current group
-                    visited_points_i, new_map = create_path_2(group_df, G, new_map, random_color, i)
+                colors = ['black', 'lightblue', 'gray', 'blue', 'lightgreen', 'purple', 'red', 'green', 'white', 'darkblue', 'orange', 'pink', 'yellow']
+                random_color = random.choice(colors)
+                
+                # Create visited_points, new_map, and layer_control for the current group
+                visited_points_i, new_map = create_path_2(group_df, G, new_map, random_color, i)
 
-                    # Append visited_points to the list
-                    visited_points_list.append(visited_points_i)
+                # Append visited_points to the list
+                visited_points_list.append(visited_points_i)
 
-                    print('Chay Xong Lan thu ' + str(i))
-                    
-            except MemoryError:
-                # Xử lý ngoại lệ khi bộ nhớ tràn hoặc hết bộ nhớ
-                print("Memory Error occurred. Saving results and clearing memory...")
-                st.error("Memory Error occurred. Results have been saved. Please try again later.")
+                print('Chay Xong Lan thu ' + str(i))
 
             # Create a Layer Control
             layer_control = folium.LayerControl().add_to(new_map)
@@ -561,7 +555,8 @@ def main():
             st.markdown(href, unsafe_allow_html=True)    
 
             print('Da chay xong')
-            st.markdown("<h3 style='text-align: center; font-size: 25px;'>FINISH</h1>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center; font-size: 30px;'>FINISH</h1>", unsafe_allow_html=True)
+            # st.header("FINISH")
                     
 if __name__ == '__main__':
     main()        
