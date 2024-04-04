@@ -504,7 +504,7 @@ def main():
             all_data = Create_RD(all_data)
             
             sovongchay = all_data['SRD'].value_counts().index[-1] + 1
-            # st.text(sovongchay)     
+            st.text('Total So Vong Lap: ' + str(sovongchay))     
             # st.dataframe(all_data)   
             # folium_static(new_map)
             
@@ -512,6 +512,7 @@ def main():
             visited_points_list = []
             
             for i in range(1, sovongchay):
+                st.text('Dang la lan thu ' + str(i))
                 print('Dang la lan thu ' + str(i))
                 # Filter data for the current group (i)
                 group_df = all_data[all_data['SRD'] == i]
