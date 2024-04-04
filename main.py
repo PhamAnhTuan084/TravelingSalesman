@@ -508,6 +508,7 @@ def main():
             # st.dataframe(all_data)   
             # folium_static(new_map)
             
+            st.text("Start building map")
             visited_points_list = []
             
             for i in range(1, sovongchay):
@@ -546,7 +547,7 @@ def main():
             # In ra kết quả
             st.dataframe(thu_danhsach)
             # folium_static(new_map, width=1000, height=800)
-            folium_static(new_map)
+            # folium_static(new_map)
 
             # Tải new_map về dưới dạng HTML
             html = get_html_from_map(new_map)
